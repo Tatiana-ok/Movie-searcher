@@ -1,3 +1,6 @@
 .moviesPageContainer {
   padding-left: 25px;
+  counter-reset: my-counter;
+  list-style-type: none;
 }
+

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Reviews/Reviews.module.css"],"names":[],"mappings":"AAAA,iCACE,iBACF,CAEA,uBACE,eACF","file":"7.74174f2e.chunk.css","sourcesContent":[".reviewsContainer {\n  padding-left: 15px;\n}\n\n.author {\n  font-weight: 600;\n}\n"]}

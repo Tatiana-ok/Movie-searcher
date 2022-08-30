@@ -39,11 +39,6 @@
 
 .container-page {
   height: 100vh;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: auto;
-
   background-image: linear-gradient( 
     to right, 
     rgba(255, 255, 255, 0.5), 
@@ -54,18 +49,6 @@
   font-family: 'Quicksand', sans-serif;
   color: #010101;
   box-shadow: 0 2px 8px rgb(255 255 255);
-}
-
-@media screen and (min-width: 768px) {
-  .container-page {
-    max-width: 768px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container-page {
-    max-width: 1200px;
-  }
 }
 
 .container-nav {

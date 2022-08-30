@@ -76,7 +76,7 @@ class MovieDetailsPage extends Component {
     }
 
     return (
-      <>
+      <div className={s.container}>
         <button className={s.btnBack} type="button" onClick={this.handleGoBack}>
           <span role="img" aria-label="left-arrow">
             ⬅
@@ -129,7 +129,7 @@ class MovieDetailsPage extends Component {
             </div>
           </div>
         )}
-      </>
+      </div>
     );
   }
 }

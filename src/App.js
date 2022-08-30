@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-page">
+      <div className="container-page container">
         <nav>
           <ul className="container-nav" onClick={this.onNavClick}>
             <li className="nav-item home active">

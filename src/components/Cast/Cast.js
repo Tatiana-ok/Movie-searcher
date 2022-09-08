@@ -44,14 +44,13 @@ export default class Cast extends Component {
             <p>We don`t have information</p>
           ) : (
             this.state.cast.map(c => (
-              <li key={c.id}>
-                <p>{c.name}</p>
+              <li className={s.castCard} key={c.id}>
+                <p className={s.actorName}>Actor name:<br></br>{c.name}</p>
                 <img
                   className={s.castImg}
                   src={photoActor(c.profile_path)}
-                  alt={c.name}
-                />
-                <p>{c.character}</p>
+                  alt={c.name}           />
+                <p>Character `s name:<br></br>{c.character}</p>
               </li>
             ))
           )}

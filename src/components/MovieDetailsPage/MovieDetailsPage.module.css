@@ -1,24 +1,82 @@
+.container {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 .btnBack {
-  display: block;
+  display: inline-block;
+  width: 100px;
+  margin-top: 10px;
   margin-bottom: 5px;
+  font-size: 16px;
+  text-align: center;
   cursor: pointer;
-  border-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(200, 185, 156);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.24);
+
+  transition: all 0.5s; 
+}
+
+.btnBack span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnBack span:after {
+  content: '⬅';
+  position: absolute;
+  opacity: 0;
+  top: -17px;
+  right: 0px;
+  transition: 0.5s;
+}
+
+.btnBack:hover span {
+  padding-right: 15px;
+}
+
+.btnBack:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .mainPart {
-  display: flex;
+  padding: 0 15px;
 }
 
-.poster {
-  margin-right: 20px;
+.poster{
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.overview{
+  font-size: 20px;
 }
 
 .score {
   font-weight: 600;
-}
-
-ul {
-  padding-inline-start: 0px;
 }
 
 h4 {
@@ -28,9 +86,27 @@ h4 {
 .additional {
   display: flex;
   flex-direction: column;
-  height: 100px;
   margin-top: 10px;
   padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mainPart {
+    display: flex;
+    padding: 0;
+  }
+  .poster {
+    margin-right: 20px;
+  }
+  .title {
+    font-size: 2em;
+  }
+  .overview{
+    font-size: 1.5em;
+  }
 }

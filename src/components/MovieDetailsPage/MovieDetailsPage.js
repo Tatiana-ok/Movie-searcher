@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Cast from '../Cast/Cast';
 import Reviews from '../Reviews/Reviews';
 import s from './MovieDetailsPage.module.css';
+// import stylesIndex from '../../index.module.css';
 
 const API_KEY = 'b2ac53e8621d02ada7802ecd2ad369f6';
 // const { movieId } = this.props.match.params;
@@ -79,22 +80,21 @@ class MovieDetailsPage extends Component {
       <div className={s.container}>
         <button className={s.btnBack} type="button" onClick={this.handleGoBack}>
           <span role="img" aria-label="left-arrow">
-            ⬅
           </span>
           Go back
         </button>
         {error ? (
           <p>{error}</p>
         ) : (
-          <div>
+          <div className={s.container}>
             <div className={s.mainPart}>
               <img className={s.poster} src={poster(poster_path)} alt={title} />
               <div className={s.filmInfo}>
-                <h1>
+                <h1 className={s.title}>
                   {title} ({release_date})
                 </h1>
                 <p className={s.score}>User Score: {userScore}</p>
-                <h2>Overview</h2>
+                <h2 className={s.overview}>Overview</h2>
                 <p>{overview}</p>
                 <h3>Genres</h3>
                 <span className={s.genresItem}>
@@ -104,26 +104,26 @@ class MovieDetailsPage extends Component {
                 </span>
               </div>
             </div>
-            <div className={s.additional}>
-              <ul>
+            <div>
+              <ul className={s.additional}>
                 <h4>Additional information</h4>
+                <li>
+                  <Link
+                    to={`/movies/${movieId}/cast`}
+                    onClick={this.onToggleCast}
+                  >
+                    Cast
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={`/movies/${movieId}/reviews`}
+                    onClick={this.onToggleReviews}
+                  >
+                    Reviews
+                  </Link>
+                </li>
               </ul>
-              <li>
-                <Link
-                  to={`/movies/${movieId}/cast`}
-                  onClick={this.onToggleCast}
-                >
-                  Cast
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`/movies/${movieId}/reviews`}
-                  onClick={this.onToggleReviews}
-                >
-                  Reviews
-                </Link>
-              </li>
               {cast && <Cast movieId={movieId} />}
               {reviews && <Reviews movieId={movieId} />}
             </div>
